@@ -1,0 +1,4 @@
+./mkbootimg_dtb --kernel ~/dtbtools/g2vzw/kernel --ramdisk ~/cm10.2/out/target/product/g2/ramdisk-recovery.img --cmdline "console=ttyHSL0,115200,n8 androidboot.hardware=g2 user_debug=31 msm_rtb.filter=0x0" --base 0x00000000 --offset 0x05000000 --dt ~/dtbtools/g2vzw/dtb --pagesize 2048 --tags-addr 0x04800000 -o ~/dtbtools/g2vzw/packed.img
+./mkbootimg_dtb --kernel ~/dtbtools/g2att/kernel --ramdisk ~/cm10.2/out/target/product/g2/ramdisk-recovery.img --cmdline "console=ttyHSL0,115200,n8 androidboot.hardware=g2 user_debug=31 msm_rtb.filter=0x0" --base 0x00000000 --offset 0x05000000 --dt ~/dtbtools/g2att/dtb --pagesize 2048 --tags-addr 0x04800000 -o ~/dtbtools/g2att/packed.img
+~/loki/bin/loki_patch-linux-x86_64 recovery ~/dtbtools/g2att/aboot.img ~/dtbtools/g2att/packed.img ~/staging/openrecovery-twrp-$1-g2att.img
+~/loki/bin/loki_patch-linux-x86_64 recovery ~/dtbtools/g2vzw/aboot.img ~/dtbtools/g2vzw/packed.img ~/staging/openrecovery-twrp-$1-g2vzw.img
